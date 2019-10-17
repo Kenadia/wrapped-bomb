@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "compile": "npx truffle compile",
-    "start": "npx truffle develop"
+    "start": "npx truffle develop",
+    "test": "npx truffle test"
   },
   "dependencies": {
     "openzeppelin-solidity": "2.3.0"
