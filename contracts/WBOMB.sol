@@ -59,14 +59,14 @@ contract WBOMB is
     return amount.sub(onePercent);
   }
 
-  function deposit(uint256 baseAmount) external {
+  function wrap(uint256 baseAmount) external {
     baseToken.transferFrom(msg.sender, address(this), baseAmount);
     uint256 baseAmountReceived = getAmountReceived(baseAmount);
     uint256 wrappedAmountReceived = baseAmountReceived.mul(CONVERSION_RATE);
     _mint(msg.sender, wrappedAmountReceived);
   }
 
-  function withdraw(uint256 baseAmount) external {
+  function unwrap(uint256 baseAmount) external {
     baseToken.transfer(msg.sender, baseAmount);
     uint256 wrappedAmount = baseAmount.mul(CONVERSION_RATE);
     _burn(msg.sender, wrappedAmount);
