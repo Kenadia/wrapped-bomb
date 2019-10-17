@@ -18,11 +18,16 @@
  *
  */
 
-// const HDWalletProvider = require('truffle-hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 // const infuraKey = "fj4jll3k.....";
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
+
+// Mainnet configuration.
+const mnemonic = process.env.MNEMONIC // Will use first address in the wallet.
+const infuraMainnet = `https://main.infura.io/${process.env.INFURA_KEY}`
+const gasPrice = (process.env.GAS_PRICE_GWEI || '2') + '0'.repeat(9)
 
 module.exports = {
   /**
@@ -75,6 +80,13 @@ module.exports = {
       // network_id: 2111,   // This network is yours, in the cloud.
       // production: true    // Treats this network as if it was a public net. (default: false)
     // }
+
+    main: {
+      provider: () => new HDWalletProvider(mnemonic, infuraMainnet),
+      network_id: 1,
+      gas: 5000000,
+      gasPrice,
+    }
   },
 
   // Set default mocha options here, use special reporters etc.
