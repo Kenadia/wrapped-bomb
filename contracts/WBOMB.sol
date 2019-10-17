@@ -14,16 +14,16 @@ contract WBOMB is
   uint256 public initialSupply = (10 ** 6) * (10 ** uint256(DECIMALS));
 
   // The contract for the underlying token being wrapped.
-  IERC20 public _baseToken;
+  IERC20 public baseToken;
 
   constructor(address _baseToken)
       public
       ERC20Detailed("Wrapped Bomb", "WBOMB", DECIMALS)
   {
-    bombToken = IERC20(_baseToken)
+    baseToken = IERC20(_baseToken);
   }
 
-  function() public payable {
+  function() external payable {
     // TODO: Revert.
   }
 
@@ -36,18 +36,18 @@ contract WBOMB is
   }
 
   function totalSupply() public view returns (uint256) {
-    return protocolToken.balanceOf(address(this));
+    return baseToken.balanceOf(address(this));
   }
 
-  function approve(address spender, uint256 amount) external returns (bool) {
+  function approve(address spender, uint256 amount) public returns (bool) {
     // TODO: Implement
   }
 
-  function transfer(address recipient, uint256 amount) external returns (bool) {
+  function transfer(address recipient, uint256 amount) public returns (bool) {
     // TODO: Implement
   }
 
-  function transferFrom(address sender, address recipient, uint256 amount) external returns (bool) {
+  function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) {
     // TODO: Implement
   }
 
