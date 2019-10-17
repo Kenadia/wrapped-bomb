@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "compile": "npx truffle compile",
+    "start": "npx truffle develop"
+  },
   "dependencies": {
     "openzeppelin-solidity": "2.3.0"
   },
