@@ -1,0 +1,113 @@
+/* Page */
+
+code {
+  display: block;
+  margin: 20px 0 15px 0;
+  padding: 10px;
+  background: #eee;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 45px 20px;
+}
+
+.pure-button-primary {
+  background-color: #0c1a2b;
+}
+
+.pure-button-primary:hover {
+  background-color: #233e5e;
+}
+
+.pure-form input[type="text"]:focus {
+  border-color: #0c1a2b;
+}
+
+/* Navbar */
+
+.navbar {
+  position: fixed;
+  padding: 5px;
+  background: #E38045;
+}
+
+.navbar a {
+  color: #fff;
+}
+
+.navbar a:active,
+.navbar a:focus,
+.navbar a:hover {
+  background: #CF733E;
+}
+
+.navbar .pure-menu-heading {
+  font-weight: bold;
+  text-transform: none;
+}
+
+.navbar .navbar-right {
+  float: right;
+}
+
+.navbar .uport-logo {
+  height: 16px;
+  margin-right: 10px;
+}
+
+/* Forms */
+
+.form-row {
+  display: flex;
+  align-items: baseline;
+  height: 36px;
+}
+
+label {
+  display: inline-block;
+  width: 160px;
+  min-width: 160px;
+  font-size: 13px;
+}
+
+input {
+  flex: initial;
+  min-width: 100px;
+  margin-right: 10px;
+}
+
+button {
+  background: #fff;
+  border-radius: 3px;
+  padding: 6px;
+  width: 100px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background: #eee;
+}
+
+button:focus {
+  outline: none;
+}
+
+.status-pass {
+  color: green;
+}
+
+.status-fail {
+  color: orange;
+}
+
+.status-error {
+  color: red;
+}
+
+/* Misc */
+
+.small-text {
+  font-size: 13px;
+}

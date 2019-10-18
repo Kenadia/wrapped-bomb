@@ -8,12 +8,36 @@
     "url": "git@github.com:Kenadia/wrapped-bomb.git"
   },
   "scripts": {
+    "build": "react-scripts build",
     "compile": "tsc",
-    "compile:watch": "npm run compile -- --watch"
+    "compile:watch": "npm run compile -- --watch",
+    "eject": "react-scripts eject",
+    "start": "npx react-scripts start",
+    "test": "react-scripts test"
   },
   "dependencies": {
+    "@truffle/contract": "4.0.36",
+    "@types/react": "16.9.9",
+    "@types/react-dom": "16.9.2",
+    "@types/web3": "1.0.20",
+    "react": "16.10.2",
+    "react-dom": "16.10.2",
+    "web3": "1.2.1"
   },
   "devDependencies": {
+    "react-scripts": "3.2.0",
     "typescript": "3.6.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
