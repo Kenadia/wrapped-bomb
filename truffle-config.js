@@ -26,7 +26,8 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 // Mainnet configuration.
 const mnemonic = process.env.MNEMONIC // Will use first address in the wallet.
-const infuraMainnet = `https://main.infura.io/${process.env.INFURA_KEY}`
+const infuraKovan = `https://kovan.infura.io/v3/${process.env.INFURA_KEY}`
+const infuraMain = `https://mainnet.infura.io/v3/${process.env.INFURA_KEY}`
 const gasPrice = (process.env.GAS_PRICE_GWEI || '2') + '0'.repeat(9)
 
 module.exports = {
@@ -81,12 +82,19 @@ module.exports = {
       // production: true    // Treats this network as if it was a public net. (default: false)
     // }
 
+    kovan: {
+      provider: () => new HDWalletProvider(mnemonic, infuraKovan),
+      network_id: 42,
+      gas: 5000000,
+      gasPrice,
+    },
+
     main: {
-      provider: () => new HDWalletProvider(mnemonic, infuraMainnet),
+      provider: () => new HDWalletProvider(mnemonic, infuraMain),
       network_id: 1,
       gas: 5000000,
       gasPrice,
-    }
+    },
   },
 
   // Set default mocha options here, use special reporters etc.
