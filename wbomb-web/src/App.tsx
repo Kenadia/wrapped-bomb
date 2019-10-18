@@ -62,7 +62,12 @@ export default class App extends Component<Props, State> {
 
     const baseTokenContract = TruffleContract(BombContract)
     baseTokenContract.setProvider(web3.currentProvider)
-    const baseToken = await baseTokenContract.deployed()
+    let baseToken
+    if (networkId === 1) {
+      baseToken = await baseTokenContract.at('0x1C95b093d6C236d3EF7c796fE33f9CC6b8606714')
+    } else {
+      baseToken = await baseTokenContract.deployed()
+    }
     web3.eth.defaultAccount = userAddress
     const baseAllowance = (await baseToken.allowance.call(userAddress, wrappedToken.address)).toString()
     const baseBalance = (await baseToken.balanceOf.call(userAddress)).toString()
