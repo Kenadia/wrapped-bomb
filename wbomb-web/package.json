@@ -1,0 +1,19 @@
+{
+  "name": "wbomb-web",
+  "version": "1.0.0",
+  "main": "dist/src/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Kenadia/wrapped-bomb.git"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "compile:watch": "npm run compile -- --watch"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "typescript": "3.6.3"
+  }
+}
