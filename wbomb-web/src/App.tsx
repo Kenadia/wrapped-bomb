@@ -156,7 +156,7 @@ export default class App extends Component<Props, State> {
                     <button
                       type="button"
                       onClick={this.approve}>
-                      Wrap
+                      Set allowance
                     </button>
                   </div>
 
